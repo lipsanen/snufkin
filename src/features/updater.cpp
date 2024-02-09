@@ -52,7 +52,7 @@ private:
 	curl_slist* slist;
 
 	std::string snPath_;
-	bool m_bHasPath;
+	bool m_bHasPath = false;
 
 	bool Prepare(const char* url, int timeOut);
 	bool Download(const char* url, const char* path);
@@ -148,6 +148,7 @@ std::string Updater::GetPath()
 {
 	if (!m_bHasPath) {
 		snPath_ = GetPluginPath();
+		m_bHasPath = true;
 	}
 
 	return snPath_;
