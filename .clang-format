@@ -1,0 +1,27 @@
+Language:        Cpp
+BasedOnStyle:  Google
+
+AccessModifierOffset: -8
+AlignEscapedNewlines: DontAlign
+AllowAllParametersOfDeclarationOnNextLine: false
+AllowShortFunctionsOnASingleLine: true
+AllowShortIfStatementsOnASingleLine: false
+AllowShortLoopsOnASingleLine: false
+BinPackArguments: false
+BinPackParameters: false
+BreakBeforeBinaryOperators: NonAssignment
+BreakBeforeBraces: Attach
+BreakConstructorInitializersBeforeComma: true
+BreakStringLiterals: false
+ColumnLimit: 120
+DerivePointerAlignment: false
+IndentCaseLabels: false
+IndentWidth: 8
+MaxEmptyLinesToKeep: 1
+NamespaceIndentation: All
+PenaltyBreakBeforeFirstCallParameter: 300
+ReflowComments: false
+SortIncludes: false
+SpaceAfterTemplateKeyword: false
+SpacesBeforeTrailingComments: 1
+UseTab: ForIndentation

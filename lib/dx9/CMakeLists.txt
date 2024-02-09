@@ -1,0 +1,10 @@
+find_library (d3d9 .)
+find_library (d3dx9 .)
+add_library(d3d9 STATIC IMPORTED)
+set_property(TARGET d3d9 PROPERTY IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/d3d9.lib)
+add_library(d3dx9 STATIC IMPORTED)
+set_property(TARGET d3dx9 PROPERTY IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/d3dx9.lib)
+
+add_library(dx9 STATIC empty.c)
+target_link_libraries(dx9 PUBLIC d3d9 d3dx9)
+target_include_directories(dx9 PUBLIC include)

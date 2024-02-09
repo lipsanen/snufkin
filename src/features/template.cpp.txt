@@ -1,0 +1,29 @@
+#include "feature.hpp"
+#include "../plugin.h"
+
+// Feature description
+class TemplateFeature : public FeatureWrapper<TemplateFeature>
+{
+public:
+protected:
+	virtual bool ShouldLoadFeature() override;
+
+	virtual void InitHooks() override;
+
+	virtual void LoadFeature() override;
+
+	virtual void UnloadFeature() override;
+};
+
+static TemplateFeature feat_template;
+
+bool TemplateFeature::ShouldLoadFeature()
+{
+	return true;
+}
+
+void TemplateFeature::InitHooks() {}
+
+void TemplateFeature::LoadFeature() {}
+
+void TemplateFeature::UnloadFeature() {}

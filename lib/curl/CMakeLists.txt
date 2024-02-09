@@ -1,0 +1,10 @@
+if(WIN32)
+	find_library (libcurl_a .)
+	add_library(libcurl_a STATIC IMPORTED)
+	target_include_directories(libcurl_a INTERFACE include)
+	set_property(TARGET libcurl_a PROPERTY IMPORTED_LOCATION ${CMAKE_CURRENT_SOURCE_DIR}/lib/libcurl_a.lib)
+
+	add_library(libcurl STATIC empty.c)
+	target_link_libraries(libcurl PUBLIC libcurl_a)
+	target_include_directories(libcurl PUBLIC include)
+endif()
