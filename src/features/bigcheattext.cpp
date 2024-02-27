@@ -1,6 +1,6 @@
 #include "feature.hpp"
 #include "../plugin.h"
-#include "utils/signals.hpp"
+#include "signals.hpp"
 #include "d3d9.h"
 #include "d3dx9.h"
 

@@ -1,10 +1,7 @@
 list(APPEND UTILS_SRCS  
 	datamap_wrapper.cpp 
-	game_detection.cpp
-	interfaces.cpp
 	lua.cpp 
 	math.cpp
-	signals.cpp
 )
 
 add_library(utilslib STATIC ${UTILS_SRCS})

@@ -1,6 +1,6 @@
 #include "feature.hpp"
 #include "../plugin.h"
-#include "utils/interfaces.hpp"
+#include "interfaces.hpp"
 #include "utils/lua.hpp"
 #include "cdll_int.h"
 #include <stdlib.h>

@@ -1,5 +1,8 @@
 list(APPEND PLUGIN_SOURCES
+	"game_detection.cpp"
+	"interfaces.cpp"
 	"plugin.cpp"
+	"signals.cpp"
 	"features/autojump.cpp"
 	"features/bigcheattext.cpp"
 	"features/dx9.cpp"
@@ -15,4 +18,5 @@ list(APPEND PLUGIN_SOURCES
 )
 
 add_library(snufkin SHARED ${PLUGIN_SOURCES})
+target_include_directories(snufkin PUBLIC .)
 target_link_libraries(snufkin PUBLIC utilslib SPTLib dx9 libcurl nlohmann Dbghelp Ws2_32 Wldap32 Crypt32 Normaliz)

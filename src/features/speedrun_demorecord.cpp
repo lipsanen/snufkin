@@ -4,8 +4,8 @@
 #include "eiface.h"
 #include "filesystem.h"
 #include "../plugin.h"
-#include "utils/interfaces.hpp"
-#include "utils/signals.hpp"
+#include "interfaces.hpp"
+#include "signals.hpp"
 
 enum RecordingMode
 {

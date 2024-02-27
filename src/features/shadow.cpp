@@ -2,8 +2,8 @@
 #include "convar.h"
 #include "../plugin.h"
 #include "ent_props.hpp"
-#include "utils/game_detection.hpp"
-#include "utils/interfaces.hpp"
+#include "game_detection.hpp"
+#include "interfaces.hpp"
 #include "eiface.h"
 
 CON_COMMAND_F(sn_set_shadow_roll, "Sets the player's physics shadow roll in degrees.\n", FCVAR_CHEAT)

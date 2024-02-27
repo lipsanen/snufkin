@@ -8,9 +8,9 @@
 #include "engine/iserverplugin.h"
 #include "mathlib/vmatrix.h"
 #include "../features/ent_props.hpp"
-#include "utils/game_detection.hpp"
+#include "game_detection.hpp"
 #include "const.h"
-#include "utils/interfaces.hpp"
+#include "interfaces.hpp"
 #include "icliententity.h"
 #include "portal_utils.hpp"
 

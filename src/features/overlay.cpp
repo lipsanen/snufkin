@@ -6,8 +6,8 @@
 #include "view_shared.h"
 #include "utils/math.hpp"
 #include "../plugin.h"
-#include "utils/signals.hpp"
-#include "utils/game_detection.hpp"
+#include "signals.hpp"
+#include "game_detection.hpp"
 #include <d3dx9.h>
 
 // Overlay hook stuff, could combine with overlay renderer as well

@@ -1,5 +1,5 @@
-#include "utils/game_detection.hpp"
-#include "utils/interfaces.hpp"
+#include "game_detection.hpp"
+#include "interfaces.hpp"
 #include "icvar.h"
 #include "SPTLib/MemUtils.hpp"
 

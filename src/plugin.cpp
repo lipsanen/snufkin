@@ -12,9 +12,9 @@
 #include "filesystem.h"
 #include "icliententitylist.h"
 #include "engine/iserverplugin.h"
-#include "utils/interfaces.hpp"
-#include "utils/game_detection.hpp"
-#include "utils/signals.hpp"
+#include "interfaces.hpp"
+#include "game_detection.hpp"
+#include "signals.hpp"
 
 static Plugin plugin;
 static ConVar* sv_cheats;

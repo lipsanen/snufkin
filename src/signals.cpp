@@ -1,4 +1,4 @@
-#include "utils/signals.hpp"
+#include "signals.hpp"
 
 namespace signals {
 	Gallant::Signal1<const char*> LevelInit;
