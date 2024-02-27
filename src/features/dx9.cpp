@@ -34,7 +34,7 @@ namespace patterns
 {
 	PATTERNS(EndScene,
 		"pattern1",
-		"6A 14 B8 ?? ?? ?? ?? E8 ?? ?? ?? ?? 8B 7D ?? 8B DF 8D 47 ?? F7 DB 1B DB 23 D8 89 5D ?? 33 F6 89 75 ?? 39 73 ?? 75 ??");
+		"?? ?? ?? ?? ?? ?? ?? E8 ?? ?? ?? ?? 8B 7D ?? 8B DF 8D 47 ?? F7 DB 1B DB 23 D8 89 5D ?? 33 F6 89 75 ?? 39 73 ?? 75 ??");
 }
 
 
@@ -77,6 +77,7 @@ void DX9Feature::PreHook() {
 		//if device creation worked out -> lets get the virtual table:
 		void** vftable = *reinterpret_cast<void***>(pDevice);
 		feat_dx9.ORIG_EndScene = (DX9Feature::_EndScene)vftable[42];
+		DevMsg("End scene found at 0x%p\n", feat_dx9.ORIG_EndScene);
 
 		Feature::AddRawHook("d3d9.dll", (void**)&feat_dx9.ORIG_EndScene, (void*)DX9Feature::HOOKED_EndScene);
 		pD3D->Release();
