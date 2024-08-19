@@ -45,8 +45,20 @@ void AutojumpFeature::LoadFeature()
 	{
 		InitConcommandBase(sn_autojump);
 		int ptnNumber = GetPatternIndex((void**)&ORIG_CheckJumpButton);
-		off_mv_ptr = 2;
-		off_player_ptr = 1;
+		switch (ptnNumber)
+		{
+		case 0:  // 5135
+			off_mv_ptr = 2;
+			break;
+
+		case 1:  // 4104
+			off_mv_ptr = 1;
+			break;
+		}
+		if (off_mv_ptr == 1)
+			off_player_ptr = 2;
+		else if (off_mv_ptr == 2)
+			off_player_ptr = 1;
 	}
 }
 
