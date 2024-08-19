@@ -52,7 +52,7 @@ static ConVar sn_run_save(
     "sn_run_save",
     "",
     FCVAR_ARCHIVE | FCVAR_DONTRECORD,
-    "If empty, sn_run_start will start using map specifiec in speedrun_map. If save is specified, sn_run_start "
+    "If empty, sn_run_start will start using map specified in sn_run_map. If save is specified, sn_run_start "
     "will start using the save instead of a map. If the specified save does not exist, the speedrun will start using "
     "specified map. The save specified MUST BE in the SAVE folder!!");
 
@@ -224,7 +224,7 @@ static void findFirstMap()
         std::string mapName =
             std::string(firstMap).substr(std::string(firstMap).find("map ") + 4); // get rid of words "map "
 
-        // Will this work? Might have to be FRstrEq(speedrun_map.GetString(), NULL) == true
+        // Will this work? Might have to be FRstrEq(sn_run_map.GetString(), NULL) == true
         if (FStrEq(sn_run_map.GetString(), ""))
         {
             sn_run_map.SetValue(mapName.c_str());
@@ -267,7 +267,7 @@ CON_COMMAND_F(sn_run_start, "starts run", FCVAR_DONTRECORD)
     // No map or save set? Throw error
     if (FStrEq(sn_run_map.GetString(), "") && FStrEq(sn_run_save.GetString(), ""))
     {
-        Warning("Please set a map with speedrun_map or save with speedrun_save first.\n");
+        Warning("Please set a map with sn_run_map or save with sn_run_save first.\n");
     }
     else
     {
@@ -313,7 +313,7 @@ CON_COMMAND_F(sn_run_start, "starts run", FCVAR_DONTRECORD)
         interfaces::g_pFileSystem->AsyncWrite(path, sessionDir, sessionDirLen, false);
         interfaces::g_pFileSystem->AsyncFinishAllWrites();
 
-        // Check to see if a save is specified in speedrun_save, if not use specified map in speedrun_map
+        // Check to see if a save is specified in sn_run_save, if not use specified map in sn_run_map
         // Make sure save exisits (only checking in SAVE folder), if none load specified map.
         char tmpSav[MAX_PATH] = {};
         snprintf(tmpSav, sizeof(tmpSav) / sizeof(char), ".\\SAVE\\%s.sav", sn_run_save.GetString());
